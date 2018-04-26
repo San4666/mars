@@ -1,4 +1,4 @@
-# mars rover
+# MARS ROVER
 
 # System requirements
 
