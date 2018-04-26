@@ -1,22 +1,22 @@
-# Марсходо
+# mars rover
 
-# Системные требование
+# System requirements
 
 * php 7.1 
 * composer
 
-# Установка 
+# installation 
 
 ```
 $ composer install 
 ```
 
-# Команды для марсохода
+# Commanda of mars rover
 
-* `L` - Повернуть налево
-* `R` - Поренуть направо
-* `M` - Газ
-* `H` - Вернуться на базу
-* `P` - Приехать на место иследование
-* `I` - Начать исследование местности
-* `B` - Развернуть на 180% 
+* `L` - Turn left
+* `R` - Turn right
+* `M` - Move
+* `H` - Return to base
+* `P` - Come to the place of research
+* `I` - Start  research the area
+* `B` - Turn back
