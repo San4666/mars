@@ -42,6 +42,9 @@ class ResearchOfPlace
         }
     }
 
+    /**
+     * @return Location[]
+     */
     private function locations(): array
     {
         return [

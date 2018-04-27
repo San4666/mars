@@ -5,6 +5,9 @@ namespace Mars\Core\Entity;
 
 use Mars\Core\LocationReadInterface;
 
+/**
+ * Class Location
+ */
 class Location implements LocationReadInterface
 {
     /**
@@ -24,7 +27,6 @@ class Location implements LocationReadInterface
      */
     public function __construct(int $x, int $y)
     {
-
         $this->x = $x;
         $this->y = $y;
     }

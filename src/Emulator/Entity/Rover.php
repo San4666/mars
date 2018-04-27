@@ -2,7 +2,7 @@
 
 namespace Mars\Emulator\Entity;
 
-use Mars\Core\Enum\Direction;
+use Mars\Core\Entity\Direction;
 use Mars\Core\RoverInterface;
 
 /**

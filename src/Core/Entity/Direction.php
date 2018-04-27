@@ -1,6 +1,6 @@
 <?php
 
-namespace Mars\Core\Enum;
+namespace Mars\Core\Entity;
 
 /**
  * Class Direction

@@ -2,8 +2,10 @@
 
 namespace Mars\Core\Controller;
 
+use Mars\Core\Action\CollectionAction;
 use Mars\Core\ActionInterface;
 use Mars\Core\RoverInterface;
+use Mars\Exception\Exception;
 use Mars\Exception\NotFoundActionException;
 
 /**
@@ -19,29 +21,50 @@ class Controller
 
     /**
      * @param string $name
-     * @param ActionInterface $action
+     * @param ActionInterface $command
      *
      * @return void
+     *
+     * @throws Exception
      */
     public function registerAction(string $name, ActionInterface $command): void
     {
-        $this->commands[$name] = $command;
+        if (strlen($name) == 1) {
+            $this->commands[$name] = $command;
+        } else {
+            throw new Exception('a name of command must be one character');
+        }
+
     }
 
     /**
      * @param RoverInterface $rover
-     * @param string $sting
+     * @param string $commandString
      *
      * @throws NotFoundActionException
      */
-    public function execute(RoverInterface $rover, string $sting): void
+    public function execute(RoverInterface $rover, string $commandString): void
     {
-        foreach (str_split($sting) as $name) {
+        $this->parserCommandString($commandString)->action($rover);
+    }
+
+    /**
+     * @param string $commandString
+     *
+     * @return ActionInterface
+     *
+     * @throws NotFoundActionException
+     */
+    private function parserCommandString(string $commandString): ActionInterface
+    {
+        $collection = new CollectionAction();
+        foreach (str_split($commandString) as $name) {
             if (isset($this->commands[$name])) {
-                $this->commands[$name]->action($rover);
+                $collection->add($this->commands[$name]);
             } else {
                 throw new NotFoundActionException();
             }
         }
+        return $collection;
     }
 }

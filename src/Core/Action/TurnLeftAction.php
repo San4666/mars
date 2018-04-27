@@ -10,10 +10,8 @@ use Mars\Core\RoverInterface;
  */
 class TurnLeftAction implements ActionInterface
 {
-    /*
-     * Executes  action the Rover
-     *
-     * @param RoverInterface $rover
+    /**
+     * @inheritdoc
      */
     function action(RoverInterface $rover): void
     {

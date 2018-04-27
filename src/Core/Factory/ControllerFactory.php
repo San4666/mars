@@ -9,6 +9,7 @@ use Mars\Core\Action\TurnLeftAction;
 use Mars\Core\Action\TurnRightAction;
 use Mars\Core\Controller\Controller;
 use Mars\Core\LocationReadInterface;
+use Mars\Exception\Exception;
 
 /**
  * Class ControllerFactory
@@ -42,6 +43,11 @@ class ControllerFactory
         $this->radiosResearch = $radiosResearch;
     }
 
+    /**
+     * @return Controller
+     *
+     * @throws Exception
+     */
     public function factory(): Controller
     {
         $controller = new Controller();

@@ -3,7 +3,7 @@
 namespace Mars\Core\Service;
 
 
-use Mars\Core\Enum\Direction;
+use Mars\Core\Entity\Direction;
 use Mars\Core\LocationReadInterface;
 use Mars\Core\RoverInterface;
 
@@ -35,12 +35,18 @@ class Autopilot
         $this->locationRead = $locationRead;
     }
 
-    public function run()
+    /**
+     * @return void
+     */
+    public function run() : void
     {
         $this->setY();
         $this->setX();
     }
 
+    /**
+     * @return void
+     */
     private function setDirection(string $direction): void
     {
         while (true) {
@@ -51,7 +57,10 @@ class Autopilot
         }
     }
 
-    private function setX()
+    /**
+     * @return void
+     */
+    private function setX() : void
     {
         $diffX = $this->rover->getX() - $this->locationRead->getX();
         $steps = abs($diffX);
@@ -80,8 +89,13 @@ class Autopilot
         }
     }
 
-
-    private function move($direction, $steps)
+    /**
+     * @param $direction
+     * @param $steps
+     *
+     * @return void
+     */
+    private function move($direction, $steps) : void
     {
         $this->setDirection($direction);
         while ($steps > 0) {

@@ -12,9 +12,7 @@ use Mars\Core\RoverInterface;
 class TurnRightAction implements ActionInterface
 {
     /**
-     * @param RoverInterface $rover
-     *
-     * @return void
+     * @inheritdoc
      */
     function action(RoverInterface $rover): void
     {

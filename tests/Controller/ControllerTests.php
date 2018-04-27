@@ -4,7 +4,7 @@ namespace Mars\Tests\Controller;
 
 use Mars\Core\Controller\Controller;
 use Mars\Core\Entity\Location;
-use Mars\Core\Enum\Direction;
+use Mars\Core\Entity\Direction;
 use Mars\Core\Factory\ControllerFactory;
 use Mars\Emulator\Entity\Rover;
 use Mars\Exception\NotFoundActionException;
