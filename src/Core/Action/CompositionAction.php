@@ -9,7 +9,7 @@ use Mars\Core\RoverInterface;
 /**
  * Class CollectionAction
  */
-class CollectionAction implements ActionInterface
+class CompositionAction implements ActionInterface
 {
     /**
      * @var ActionInterface[]

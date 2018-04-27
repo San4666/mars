@@ -2,7 +2,7 @@
 
 namespace Mars\Core\Controller;
 
-use Mars\Core\Action\CollectionAction;
+use Mars\Core\Action\CompositionAction;
 use Mars\Core\ActionInterface;
 use Mars\Core\RoverInterface;
 use Mars\Exception\Exception;
@@ -57,7 +57,7 @@ class Controller
      */
     private function parserCommandString(string $commandString): ActionInterface
     {
-        $collection = new CollectionAction();
+        $collection = new CompositionAction();
         foreach (str_split($commandString) as $name) {
             if (isset($this->commands[$name])) {
                 $collection->add($this->commands[$name]);
